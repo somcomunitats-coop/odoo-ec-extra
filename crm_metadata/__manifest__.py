@@ -6,7 +6,7 @@
     "author": "Coopdevs Treball SCCL",
     "website": "",
     "category": "crm",
-    "version": "16.0.0.0.1",
+    "version": "15.0.0.0.1",
     # any module necessary for this one to work correctly
     "depends": ["base", "crm", "metadata"],
     # always loaded
