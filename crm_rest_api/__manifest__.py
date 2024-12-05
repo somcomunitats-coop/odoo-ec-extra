@@ -6,7 +6,7 @@
     "author": "Coopdevs Treball SCCL",
     "website": "",
     "category": "api",
-    "version": "16.0.0.0.1",
+    "version": "16.0.0.1.0",
     # any module necessary for this one to work correctly
     "depends": ["base", "base_rest", "crm", "component"],
     # always loaded
