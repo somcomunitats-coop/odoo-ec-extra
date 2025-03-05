@@ -27,7 +27,7 @@ class SubscriptionRequest(models.Model):
                 existing_rpb = self._create_bank()
             if existing_rpb and not existing_rpb.mandate_ids:
                 self._validate_mandate_creation()
-                # self.mandate_id = self._create_mandate(existing_rpb)
+                self.mandate_id = self._create_mandate(existing_rpb)
         return super().create_invoice(partner)
 
 
@@ -40,7 +40,7 @@ class SubscriptionRequest(models.Model):
             raise ValidationError(_("Must assign a valid iban."))
 
     def _create_mandate(self, rpb):
-        return self.env["account.banking.mandate"].create({
+        return self.env["account.banking.mandate"].with_company(self.company_id.id).create({
             "format": "sepa",
             "type": "recurrent",
             "state": "valid",
