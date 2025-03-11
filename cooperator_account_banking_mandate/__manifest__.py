@@ -1,6 +1,6 @@
 {
     "name": "Cooperator Account Banking Mandate",
-    "version": "16.0.0.2.0",
+    "version": "16.0.0.2.1",
     "license": "AGPL-3",
     "summary": """
         This module adds mandate selection to cooperator subscription request.""",
