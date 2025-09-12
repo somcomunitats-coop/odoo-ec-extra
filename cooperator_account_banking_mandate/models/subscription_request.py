@@ -56,7 +56,10 @@ class SubscriptionRequest(models.Model):
         return vals
 
     def _get_existing_rpb(self):
-        return self.partner_id.bank_ids.filtered(lambda rpb: rpb.acc_number == self.iban and rpb.company_id == self.company_id.id)
+        existing_rpb = self.partner_id.bank_ids.filtered(
+            lambda rpb: rpb.sanitized_acc_number == self.iban.replace(" ", "") and rpb.company_id.id == self.company_id.id
+        )
+        return existing_rpb
 
     def _create_bank(self):
         return self.env["res.partner.bank"].create(
