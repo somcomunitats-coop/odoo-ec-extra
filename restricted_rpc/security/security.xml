@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?> <odoo>
+
+    <record id="group_xmlrpc_api_access" model="res.groups">
+        <field name="name">XML-RPC API Access</field>
+    </record>
+
+</odoo>
